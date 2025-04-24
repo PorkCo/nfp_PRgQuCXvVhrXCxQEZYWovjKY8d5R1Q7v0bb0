@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+   <html>
+   <head>
+     <title>Dashboard PorkCo</title>
+     <script src="auth.js" defer></script>
+     <style>
+       body { font-family: Arial; padding: 20px; }
+       button { background: #dc3545; color: white; border: none; padding: 10px; }
+     </style>
+   </head>
+   <body>
+     <h2>Bienvenido al Dashboard</h2>
+     <button id="logoutBtn">Cerrar sesión</button>
+     <script>
+       document.getElementById('logoutBtn').addEventListener('click', () => {
+         firebase.auth().signOut().then(() => {
+           window.location.href = "index.html";
+         });
+       });
+     </script>
+   </body>
+   </html>
